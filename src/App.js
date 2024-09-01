@@ -12,7 +12,7 @@ import Header from './Header';
 
 const App = () => {
   return (
-    <div className='bg-red-200 min-h-screen text-gray-900'>
+    <div className='bg-red-100 min-h-screen text-gray-900'>
       <Header /> 
       <Routes>
         <Route path='/' element={<Home />} />

@@ -17,10 +17,10 @@ const Movies = () => {
             <NavLink 
               key={imdbID}
               to={`/Movies/${imdbID}`} // Correctly using backticks for template literals
-              className='block border-red-500 shadow-lg rounded-lg overflow-hidden
+              className='block border-red-200 shadow-lg rounded-lg overflow-hidden
                transform hover:scale-105 transition-transform duration-300 flex flex-col items-center
-                hover:bg-red-400 transition-colors duration-300  border-4 border-transparent
-                 hover:border-red-300 transition-transform transition-colors transition-border duration-300'
+                hover:bg-red-200 transition-colors duration-300  border-4 border-transparent
+                 hover:border-red-500 transition-transform transition-colors transition-border duration-300'
 
             >
               <img src={Poster} alt={Title} className='w-60 h-80 object-cover mt-5' />
