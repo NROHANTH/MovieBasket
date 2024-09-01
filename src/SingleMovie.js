@@ -1,6 +1,6 @@
 // SingleMovie.js
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams ,useNavigate} from 'react-router-dom';
 import { useGlobalContext } from './context';
 
 const SingleMovie = () => {
@@ -9,6 +9,12 @@ const SingleMovie = () => {
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
+
+
+  const handleBackClick = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -59,7 +65,7 @@ const SingleMovie = () => {
   return (
     <div className='flex items-start bg-red-400 w-2/4 ml-80 mt-32 rounded-lg'>
       <img src={movie.Poster} alt={movie.Title} className="w-64 h-auto rounded-lg" />
-
+      
       <div className='ml-8 flex flex-col justify-center w-96'>
         <h1 className='text-3xl font-bold mb-4'>{movie.Title}</h1>
         <p className='font-serif'>{movie.Plot}</p>
@@ -69,7 +75,14 @@ const SingleMovie = () => {
         <h2 className='font-serif'>Type: {movie.Type}</h2>
         <h2 className='font-serif'>Director: {movie.Director}</h2>
         <h2 className='font-serif'>Actors: {movie.Actors}</h2>
+        <button 
+        onClick={handleBackClick} 
+        className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
+      >
+        Back
+      </button>
       </div>
+      
     </div>
   );
 };
