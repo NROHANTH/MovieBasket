@@ -27,7 +27,7 @@ const defaultMovies = [
   }
 ];
 
-const APP_URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
+const APP_URL = `http://www.omdbapi.com/?apikey=a411e99e`;
 
 // Provider component
 const AppProvider = ({ children }) => {
